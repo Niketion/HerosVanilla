@@ -9,8 +9,6 @@ import net.herospvp.herosvanilla.listeners.ConnectionListeners;
 import net.herospvp.herosvanilla.listeners.DeathListeners;
 import net.herospvp.herosvanilla.managers.MembersManager;
 import net.herospvp.herosvanilla.managers.PartiesManager;
-import net.herospvp.herosvanilla.structure.Member;
-import net.herospvp.herosvanilla.tasks.AnnounceTask;
 import net.herospvp.herosvanilla.tasks.MoveTask;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.Bukkit;
@@ -32,14 +30,6 @@ public class HerosVanilla extends JavaPlugin {
     @Setter
     private MembersManager membersManager;
     private Chat vaultChat;
-
-    @Setter
-    private int announce=0;
-    private String[] announceMessage = new String[] {
-            ChatColor.RED + "[TIP] Vuoi scrivere con la chat colorata? Vuoi avere accesso al /sethome? Acquista il pacchetto "
-                    + ChatColor.YELLOW + "VIP" + ChatColor.RED + " a soli 10euro!",
-            ChatColor.RED + "[TIP] Qualcosa ti da noia? Proponici le tue idee su www.herospvp.net!",
-    };
 
     @Override
     public void onEnable() {
@@ -68,8 +58,6 @@ public class HerosVanilla extends JavaPlugin {
         new HomeCommand(this);
 
         vaultChat = getServer().getServicesManager().getRegistration(Chat.class).getProvider();
-
-        new AnnounceTask(this).runTaskTimerAsynchronously(this, 0, 20*60*10);
     }
 
 }
