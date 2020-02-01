@@ -1,0 +1,9 @@
+party:
+  lolli:
+    owner: Niketion
+    players:
+      - Luca
+      - Angelo
+claims:
+  Niketion:
+    - "world:15:4"

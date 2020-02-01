@@ -1,0 +1,12 @@
+name: HerosVanilla
+version: ${project.version}
+main: net.herospvp.herosvanilla.HerosVanilla
+api-version: 1.13
+authors: [Niketion]
+commands:
+  party:
+  claim:
+  random:
+  hub:
+  sethome:
+  home:
